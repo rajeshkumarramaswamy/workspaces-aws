@@ -4,7 +4,7 @@ layout: default
 ---
 
 <!-- Main jumbotron -->
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <h1 class="display-4">
     <strong>{{page.title}}</strong>
   </h1>
@@ -16,13 +16,12 @@ layout: default
     The documentation (i.e. setup instructions, modification details) and full source code for this template as well as the pipeline
     that powers it is available within the GitHub repository.
   </p>
-  <a href="https://github.com/eeg3/workspaces-portal" class="btn btn-outline-primary">View Source Code</a>
+  <a href="https://github.com/rajeshkumarramaswamy/aws-workspaces" class="btn btn-outline-primary">View Source Code</a>
   </p>
-</div>
+</div> -->
 
 <!-- Place alerts in this div. -->
-<div id="methodStatus">
-</div>
+
 
 <!-- Show a loading div before AJAX call, and hide it after. -->
 <div id="loadDiv" class="row">
@@ -32,10 +31,18 @@ layout: default
 </div>
 
 <!-- If no provisioned desktop exists for the user, show the request panel. -->
-<div class="row" id="desktopNoExist" hidden>
-    <div class="col-md-8 col-lg-6 mr-auto ml-auto">
+<div class="container">
+<div class="row" id="desktopNoExist" hidden style="margin-top: 20px">
+    <div class="col" id="indexcard">
+        <div style="font-weight: bold;color: #01598A; text-align: center;margin-top: 20px">
+            Request WorkSpace
+            <hr style="border-top: 2px solid rgba(0,0,0,2)">
+            <span>Use this form to request WorkSpaces</span>
+        </div>
+    </div>
+    <div class="col">
         <div class="card border-dark">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header bg-custom text-white">
               Request WorkSpace
             </div>
             <div class="card-body">
@@ -45,6 +52,7 @@ layout: default
                         <input type="text" id="reqUsername" class="form-control form-control-sm" placeholder="Directory Username" required>
 
                       </div>
+                      <br>
                       <div class="mt-1">
                         <!-- Populated based on Bundles available. -->
                         <select id="reqBundle" />
@@ -52,7 +60,7 @@ layout: default
                       </div>
                       <br>
                       <div>
-                        <button id="reqButton" class="btn btn-primary" type="submit" name="submit">
+                        <button id="reqButton" class="btn btn-primary bg-custom" type="submit" name="submit">
                           <span>Create WorkSpace</span>
                           <i></i>
                         </button>
@@ -63,12 +71,15 @@ layout: default
           </div>
     </div>
   </div>
+</div>
+  <div id="methodStatus" style="margin-top: 30px">
+    </div>
 
 
   <div class="row" id="desktopExist" hidden>
       <div class="col-sm-9 mr-auto ml-auto">
           <div class="card border-dark">
-              <div class="card-header bg-primary text-white">
+              <div class="card-header bg-default text-black">
                 WorkSpace Details
               </div>
               <div class="card-body">
@@ -97,7 +108,7 @@ layout: default
       </div>
       <div class="col-sm-3 mr-auto ml-auto">
         <div class="card border-dark">
-          <div class="card-header bg-primary text-white">
+          <div class="card-header bg-default text-black">
             WorkSpace Operations
           </div>
           <div class="card-body">
